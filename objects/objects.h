@@ -13,6 +13,7 @@ public:
 class IVehicle
 {
 public:
+    ~IVehicle() {};
     int mileage = 0;
     virtual bool drive(int kilometres) = 0;
     virtual void refuel() = 0;
@@ -22,6 +23,7 @@ public:
 class AbstractCar : public IVehicle
 {
 public:
+    ~AbstractCar() {};
     AbstractCar();
 
     int mileage;
@@ -38,6 +40,7 @@ public:
 class Sedan : public AbstractCar // наследование класса Vehicle классами Sedan, Suv и Bus, возможны ошибки в параметрах доступа
 {
 public:
+    ~Sedan() {};
     Sedan() { fuel = 0; max_fuel = 40; fuel_drain = 0.1; }
 
     double getFuelLevel(){
@@ -52,6 +55,7 @@ public:
 class Suv : public AbstractCar
 {
 public:
+    ~Suv() {};
     Suv() { fuel = 0; max_fuel = 50; fuel_drain = 0.15; }
 
 };
@@ -59,6 +63,7 @@ public:
 class Bus : public AbstractCar
 {
 public:
+    ~Bus() {};
     Bus() { fuel = 0; max_fuel = 50; fuel_drain = 0.2; }
 
 };
@@ -66,6 +71,7 @@ public:
 class Bicycle : public IVehicle
 {
 public:
+    ~Bicycle() {};
     bool drive(int kilometres)
     {
         mileage += kilometres;
@@ -87,6 +93,7 @@ public:
 
 struct RoutePoint
 {
+    ~RoutePoint() {};
     RoutePoint();
     int xKm; // координата x в км
     int yKm; // координата y в км
@@ -96,6 +103,7 @@ struct RoutePoint
 class Route
 {
 public:
+    ~Route() {};
     std::vector <RoutePoint>  Pointslist_vector{};
     void addpoint(const RoutePoint& point);
     void run(IVehicle* vehicle);
