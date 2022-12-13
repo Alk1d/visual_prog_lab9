@@ -41,7 +41,7 @@ class Sedan : public AbstractCar // наследование класса Vehicl
 {
 public:
     ~Sedan() {};
-    Sedan() { fuel = 0; max_fuel = 40; fuel_drain = 0.1; }
+    Sedan():AbstractCar() { fuel = 0; max_fuel = 40; fuel_drain = 0.1; mileage = 0; }
 
     double getFuelLevel(){
         return this->fuel;
@@ -56,7 +56,7 @@ class Suv : public AbstractCar
 {
 public:
     ~Suv() {};
-    Suv() { fuel = 0; max_fuel = 50; fuel_drain = 0.15; }
+    Suv():AbstractCar() { fuel = 0; max_fuel = 50; fuel_drain = 0.15; mileage = 0; }
 
 };
 
@@ -64,7 +64,7 @@ class Bus : public AbstractCar
 {
 public:
     ~Bus() {};
-    Bus() { fuel = 0; max_fuel = 50; fuel_drain = 0.2; }
+    Bus():AbstractCar() { fuel = 0; max_fuel = 50; fuel_drain = 0.2; mileage = 0; }
 
 };
 

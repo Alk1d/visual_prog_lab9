@@ -34,10 +34,10 @@ void test_case::test_sedan()
         QCOMPARE(sedan.getFuelLevel(),40.0);
         QVERIFY(sedan.drive(100));
         QCOMPARE(sedan.getMilage(),100);
-        QCOMPARE(sedan.getFuelLevel(),43.0);
+        QCOMPARE(sedan.getFuelLevel(),30.0);
         QVERIFY(!sedan.drive(500));
-        QCOMPARE(sedan.getMilage(), 250);
-        QCOMPARE(sedan.getFuelLevel(),32.5);
+        QCOMPARE(sedan.getMilage(), 100);
+        QCOMPARE(sedan.getFuelLevel(),30.0);
         sedan.refuel();
         QCOMPARE(sedan.getFuelLevel(),50);
         QVERIFY(sedan.drive(500));
