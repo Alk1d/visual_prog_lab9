@@ -81,7 +81,8 @@ void test_case::test_bicycle()
 void test_case::test_route()
 {
     Route route;
-    RoutePoint point;
+    route.addpoint(RoutePoint{0, 0, "Point1"});
+    // use QVERIFY_THROWS_NO_EXCEPTION or QVERIFY_THROWS_EXCEPTION here to check if point is in route
 }
 QTEST_APPLESS_MAIN(test_case)
 
