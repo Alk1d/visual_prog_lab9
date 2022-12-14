@@ -70,3 +70,10 @@ void Route::run(IVehicle* vehicle)
     std::cout << "run complete" << std::endl;
 
 }
+double AbstractCar::getFuelLevel(){
+    return this->fuel;
+}
+
+double AbstractCar::getMileage(){
+    return this->mileage;
+}

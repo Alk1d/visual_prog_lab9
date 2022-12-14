@@ -18,6 +18,8 @@ public:
     virtual bool drive(int kilometres) = 0;
     virtual void refuel() = 0;
     virtual void printStatus() = 0;
+    virtual double getFuelLevel() = 0;
+    virtual double getMileage() = 0;
 };
 
 class AbstractCar : public IVehicle
@@ -34,7 +36,8 @@ public:
     bool drive(int kilometres); // наматывает пробег и тратит топливо
     void refuel(); // заправка на полный бак
     void printStatus(); // вывод информации о пробеге и текущем топливе
-
+    double getFuelLevel();
+    double getMileage();
 };
 
 class Sedan : public AbstractCar // наследование класса Vehicle классами Sedan, Suv и Bus, возможны ошибки в параметрах доступа
@@ -43,13 +46,7 @@ public:
     ~Sedan() {};
     Sedan():AbstractCar() { fuel = 0; max_fuel = 40; fuel_drain = 0.1; mileage = 0; }
 
-    double getFuelLevel(){
-        return this->fuel;
-    }
 
-    double getMilage(){
-        return this->mileage;
-    }
 };
 
 class Suv : public AbstractCar
@@ -88,6 +85,19 @@ public:
     {
         std::cout << std::endl;
         std::cout << "mileage = " << mileage << " km" << std::endl;
+    }
+
+    double getFuelLevel()
+    {
+        std::cout << std::endl;
+        std::cout << "No fuel tank" << std::endl;
+        return 0;
+    }
+
+    double getMileage()
+    {
+        std::cout << "mileage = " << mileage << " km" << std::endl;
+        return mileage;
     }
 };
 

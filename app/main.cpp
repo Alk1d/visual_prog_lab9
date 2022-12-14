@@ -1,10 +1,10 @@
 #include <iostream>
-#include "D:/Qt source/visual_prog_lab9_V3/objects/objects.h"
+#include "../objects/objects.h"
 #include <fstream>
 #include <string>
 int main( int argc, char* argv[]  )
 {
-    std::string path = "D:/Qt source/visual_prog_lab9_V3/app/route.txt";
+    std::string path = "../../visual_prog_lab9_V3/app/route.txt";
     Route routes;
     RoutePoint point;
 
